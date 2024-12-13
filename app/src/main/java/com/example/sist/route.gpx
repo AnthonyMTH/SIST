@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Claude Anthropic" xmlns="http://www.topografix.com/GPX/1/1">
+    <metadata>
+        <name>Ruta Peatonal Detallada</name>
+        <desc>Recorrido simulado de caminata con puntos frecuentes</desc>
+        <time>2024-12-12T10:00:00Z</time>
+    </metadata>
+    <trk>
+        <name>Caminata Urbana</name>
+        <trkseg>
+            <trkpt lat="19.432608" lon="-99.133208">
+                <ele>2240</ele>
+                <time>2024-12-12T10:00:00Z</time>
+            </trkpt>
+            <trkpt lat="19.432628" lon="-99.133228">
+                <ele>2240.1</ele>
+                <time>2024-12-12T10:00:05Z</time>
+            </trkpt>
+            <trkpt lat="19.432648" lon="-99.133248">
+                <ele>2240.2</ele>
+                <time>2024-12-12T10:00:10Z</time>
+            </trkpt>
+            <trkpt lat="19.432668" lon="-99.133268">
+                <ele>2240.3</ele>
+                <time>2024-12-12T10:00:15Z</time>
+            </trkpt>
+            <trkpt lat="19.432688" lon="-99.133288">
+                <ele>2240.4</ele>
+                <time>2024-12-12T10:00:20Z</time>
+            </trkpt>
+            <trkpt lat="19.432708" lon="-99.133308">
+                <ele>2240.5</ele>
+                <time>2024-12-12T10:00:25Z</time>
+            </trkpt>
+            <trkpt lat="19.432728" lon="-99.133328">
+                <ele>2240.6</ele>
+                <time>2024-12-12T10:00:30Z</time>
+            </trkpt>
+            <trkpt lat="19.432748" lon="-99.133348">
+                <ele>2240.7</ele>
+                <time>2024-12-12T10:00:35Z</time>
+            </trkpt>
+            <trkpt lat="19.432768" lon="-99.133368">
+                <ele>2240.8</ele>
+                <time>2024-12-12T10:00:40Z</time>
+            </trkpt>
+            <trkpt lat="19.432788" lon="-99.133388">
+                <ele>2240.9</ele>
+                <time>2024-12-12T10:00:45Z</time>
+            </trkpt>
+            <trkpt lat="19.432808" lon="-99.133408">
+                <ele>2241.0</ele>
+                <time>2024-12-12T10:00:50Z</time>
+            </trkpt>
+            <trkpt lat="19.433608" lon="-99.134208">
+                <ele>2242</ele>
+                <time>2024-12-12T10:05:00Z</time>
+            </trkpt>
+            <trkpt lat="19.434408" lon="-99.135008">
+                <ele>2243</ele>
+                <time>2024-12-12T10:10:00Z</time>
+            </trkpt>
+            <trkpt lat="19.435208" lon="-99.135808">
+                <ele>2244</ele>
+                <time>2024-12-12T10:15:00Z</time>
+            </trkpt>
+            <trkpt lat="19.436008" lon="-99.136608">
+                <ele>2245</ele>
+                <time>2024-12-12T10:20:00Z</time>
+            </trkpt>
+        </trkseg>
+    </trk>
+</gpx>
