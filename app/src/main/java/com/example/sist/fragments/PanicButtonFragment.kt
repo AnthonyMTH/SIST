@@ -82,6 +82,7 @@ class PanicButtonFragment : Fragment() {
         startTrackingButton.setOnClickListener {
             if (!isTracking) {
                 if (checkLocationPermissions()) {
+                    //socket.emit("alert")
                     startLocationUpdates()
                     startTrackingButton.isEnabled = false
                     stopTrackingButton.isEnabled = true
@@ -145,7 +146,7 @@ class PanicButtonFragment : Fragment() {
                         put("timestamp", System.currentTimeMillis())
                     }
                     Log.d("Location", locationData.toString())
-                    socket.emit("location_update", locationData)
+                    socket.emit("alert", locationData)
                 }
             }
         }
