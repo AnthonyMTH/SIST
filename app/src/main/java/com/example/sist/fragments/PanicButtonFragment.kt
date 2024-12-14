@@ -30,6 +30,7 @@ class PanicButtonFragment : Fragment() {
     private val DEVICE_ID = UUID.randomUUID().toString()
     private val LOCATION_PERMISSION_REQUEST_CODE = 1
     private var isTracking = false
+    private var isAlertResolved = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,6 +69,17 @@ class PanicButtonFragment : Fragment() {
                 }
             }
 
+            socket.on("alert_resolved") { args ->
+                val resolvedDeviceId = args[0] as String
+                if (resolvedDeviceId == DEVICE_ID) {
+                    requireActivity().runOnUiThread {
+                        isAlertResolved = true
+                        Toast.makeText(requireContext(), "Alerta resuelta", Toast.LENGTH_SHORT).show()
+                        stopTrackingButton.performClick() // Opcional: Detener actualizaciones de ubicación automáticamente.
+                    }
+                }
+            }
+
             socket.connect()
         } catch (e: Exception) {
             e.printStackTrace()
@@ -82,13 +94,14 @@ class PanicButtonFragment : Fragment() {
         startTrackingButton.setOnClickListener {
             if (!isTracking) {
                 if (checkLocationPermissions()) {
-                    //socket.emit("alert")
-                    startLocationUpdates()
-                    startTrackingButton.isEnabled = false
-                    stopTrackingButton.isEnabled = true
-                    isTracking = true
+                    if (!isAlertResolved) {
+                        startLocationUpdates()
+                        startTrackingButton.isEnabled = false
+                        stopTrackingButton.isEnabled = true
+                        isTracking = true
 
-                    Toast.makeText(requireContext(), "Seguimiento iniciado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Seguimiento iniciado", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
                     requestLocationPermissions()
                 }
@@ -101,6 +114,8 @@ class PanicButtonFragment : Fragment() {
                 startTrackingButton.isEnabled = true
                 stopTrackingButton.isEnabled = false
                 isTracking = false
+
+                socket.emit("resolve_alert", this.DEVICE_ID)
 
                 Toast.makeText(requireContext(), "Seguimiento detenido", Toast.LENGTH_SHORT).show()
             }
@@ -139,14 +154,15 @@ class PanicButtonFragment : Fragment() {
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
                 locationResult.lastLocation?.let { location ->
-                    val locationData = JSONObject().apply {
-                        put("deviceId", DEVICE_ID)
-                        put("latitude", location.latitude)
-                        put("longitude", location.longitude)
-                        put("timestamp", System.currentTimeMillis())
-                    }
-                    Log.d("Location", locationData.toString())
-                    socket.emit("alert", locationData)
+                        val locationData = JSONObject().apply {
+                            put("deviceId", DEVICE_ID)
+                            put("latitude", location.latitude)
+                            put("longitude", location.longitude)
+                            put("timestamp", System.currentTimeMillis())
+                        }
+                        Log.d("Location", locationData.toString())
+                        socket.emit("alert", locationData)
+
                 }
             }
         }
