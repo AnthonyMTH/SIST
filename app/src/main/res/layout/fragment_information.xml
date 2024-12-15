@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.InformationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Al presionar el botón se enviará una alerta a los servicios de emergencia de forma inmediata. \n\nDebe permitir acceso a su ubicación en cuanto se le pida, esto para monitorear y poder rastrear su ubicación en tiempo real. \n\nUna vez su alerta haya sido resuelta, presione sobre el botón 'Detener seguimiento' ubicado en la esquina inferior, esto notificará a los servicios de emergencia que su alerta ya ha sido resuelta.\n\nDe igual manera, los servicios de emergencia pueden dar por resuelta su alerta si ya ha sido atendida."
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+</FrameLayout>

@@ -5,7 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.sist.fragments.IncidentsFragment
+import com.example.sist.fragments.InformationFragment
 import com.example.sist.fragments.PanicButtonFragment
 import com.example.sist.fragments.SettingsFragment
 
@@ -33,9 +33,9 @@ import com.example.sist.fragments.SettingsFragment
 
      override fun onOptionsItemSelected(item: MenuItem): Boolean {
          return when (item.itemId) {
-             R.id.menu_incidents -> {
-                 // Cargar el fragment de Registro de Incidentes
-                 loadFragment(IncidentsFragment())
+             R.id.menu_information -> {
+                 // Cargar el fragment de Manual
+                 loadFragment(InformationFragment())
                  true
              }
              R.id.menu_settings -> {
