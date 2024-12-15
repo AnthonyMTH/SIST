@@ -7,10 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.sist.fragments.InformationFragment
 import com.example.sist.fragments.PanicButtonFragment
-import com.example.sist.fragments.SettingsFragment
 
 
- class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
          setContentView(R.layout.activity_main)
@@ -38,11 +37,7 @@ import com.example.sist.fragments.SettingsFragment
                  loadFragment(InformationFragment())
                  true
              }
-             R.id.menu_settings -> {
-                 // Cargar el fragment de Configuración
-                 loadFragment(SettingsFragment())
-                 true
-             }
+
              else -> super.onOptionsItemSelected(item)
          }
      }

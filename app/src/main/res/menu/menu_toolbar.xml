@@ -6,8 +6,4 @@
         android:title="Acerca de"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/menu_settings"
-        android:title="Configuración"
-        app:showAsAction="never" />
 </menu>
