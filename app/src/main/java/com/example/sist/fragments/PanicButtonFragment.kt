@@ -45,6 +45,11 @@ class PanicButtonFragment : Fragment() {
                 reconnectionDelay = 1000
                 timeout = 5000
             }
+
+            // Poner la IP de la PC a la que esta conectada el telefono
+            // socket = IO.socket("http://192.168.0.11:3000", options)
+
+            // Teléfono emulado
             socket = IO.socket("http://10.0.2.2:3000", options)
 
             socket.on(Socket.EVENT_CONNECT) {
